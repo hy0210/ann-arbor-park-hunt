@@ -34,6 +34,34 @@ import 'leaflet/dist/leaflet.css';
 import { parks } from './data/parks';
 import { getDistance, isInsidePark } from './utils/distance';
 
+// 創建自定義用戶位置圖標
+const createUserIcon = () => {
+  return L.divIcon({
+    html: `<div style="
+      width: 30px;
+      height: 30px;
+      background: #e74c3c;
+      border: 3px solid white;
+      border-radius: 50%;
+      box-shadow: 0 0 0 2px #e74c3c;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    ">
+      <div style="
+        width: 6px;
+        height: 6px;
+        background: white;
+        border-radius: 50%;
+      "></div>
+    </div>`,
+    className: 'user-marker-icon',
+    iconSize: [30, 30],
+    iconAnchor: [15, 15],
+    popupAnchor: [0, -15]
+  });
+};
+
 export default {
   name: 'App',
   setup() {
@@ -110,6 +138,7 @@ export default {
 
         // 添加新標記
         const userMarker = L.marker([lat, lng], {
+          icon: createUserIcon(),
           className: 'user-marker'
         }).addTo(map.value);
         userMarker.bindPopup('您的位置');
