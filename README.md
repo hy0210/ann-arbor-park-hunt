@@ -1,125 +1,125 @@
-# 🎮 Ann Arbor Park Hunt
+# 🎮 安娜堡公園尋訪遊戲
 
-A location-based mobile web game inspired by Pokémon Legends: Arceus. Discover and visit parks in Ann Arbor to collect them!
+一款受寶可夢傳說 Arceus 啟發的地點基礎行動網路遊戲。探索並訪問安娜堡的公園來集點！
 
-**MVP Status**: Geolocation tracking + map display + park proximity detection
+**MVP 狀態**：地理定位追蹤 + 地圖顯示 + 公園接近度檢測
 
-🌐 **Live Demo**: [ann-arbor-park-hunt.vercel.app](https://ann-arbor-park-hunt.vercel.app)
+🌐 **線上示範**：[ann-arbor-park-hunt.vercel.app](https://ann-arbor-park-hunt.vercel.app)
 
-## 📱 Features
+## 📱 功能特性
 
-- **Real-time GPS Tracking** — Automatically detects your location
-- **Interactive Map** — Built with Leaflet and OpenStreetMap
-- **Park Detection** — Visual feedback when you enter a park area
-- **Nearby Parks List** — Shows 5 closest parks with distances
-- **Mobile-Friendly** — Responsive design optimized for phones
+- **即時 GPS 追蹤** — 自動偵測您的位置
+- **互動式地圖** — 使用 Leaflet 和 OpenStreetMap 建置
+- **公園檢測** — 當您進入公園區域時顯示視覺回饋
+- **附近公園列表** — 顯示距離最近的 5 個公園和距離
+- **手機友善** — 針對手機最佳化的響應式設計
 
-## 🚀 Quick Start
+## 🚀 快速開始
 
-### Prerequisites
+### 需求條件
 - Node.js 16+
-- npm or yarn
+- npm 或 yarn
 
-### Install & Run
+### 安裝與執行
 
 ```bash
 npm install
 npm run dev
 ```
 
-Open [http://localhost:5173](http://localhost:5173) in your browser.
+在瀏覽器中開啟 [http://localhost:5173](http://localhost:5173)。
 
-### Build for Production
+### 建置生產版本
 
 ```bash
 npm run build
 ```
 
-## 🗺️ Parks Included
+## 🗺️ 包含的公園
 
-The MVP includes 10 real parks in Ann Arbor:
-- Gallup Park
-- Burns Park
-- Nichols Arboretum
-- Matthaei Botanical Gardens
-- Hudson Mills Metropark
-- Riverside Park
-- Buhr Park
-- Slaughter Pen Mountain Bike Park
-- Traverwood Park
-- Furstenberg Park
+MVP 包含安娜堡的 10 個真實公園：
+- Gallup Park（葛洛普公園）
+- Burns Park（伯恩斯公園）
+- Nichols Arboretum（尼柯爾樹木園）
+- Matthaei Botanical Gardens（馬泰植物園）
+- Hudson Mills Metropark（哈德遜磨坊都會公園）
+- Riverside Park（河邊公園）
+- Buhr Park（伯爾公園）
+- Slaughter Pen Mountain Bike Park（屠宰場山地自行車公園）
+- Traverwood Park（特拉弗伍德公園）
+- Furstenberg Park（弗斯滕伯格公園）
 
-*Note: Coordinates are approximate for MVP testing. Can be updated with real OpenStreetMap data.*
+*注：座標為 MVP 測試的近似值。可使用真實 OpenStreetMap 資料更新。*
 
-## 🛠️ Tech Stack
+## 🛠️ 技術堆疊
 
-- **Vue 3** — Frontend framework
-- **Leaflet** — Map library
-- **Vite** — Build tool
-- **Vercel** — Hosting & deployment
+- **Vue 3** — 前端框架
+- **Leaflet** — 地圖庫
+- **Vite** — 建置工具
+- **Vercel** — 主機與部署
 
-## 📂 Project Structure
+## 📂 專案結構
 
 ```
 src/
-├── App.vue              # Main app component with map & geolocation
+├── App.vue              # 包含地圖和地理定位的主應用元件
 ├── data/
-│   └── parks.js         # Park locations & metadata
+│   └── parks.js         # 公園位置和中繼資料
 ├── utils/
-│   └── distance.js      # Distance calculation (Haversine formula)
+│   └── distance.js      # 距離計算（Haversine 公式）
 ├── main.js
 └── style.css
 ```
 
-## 🎯 MVP Features Implemented
+## 🎯 已實現的 MVP 功能
 
-- ✅ Geolocation API integration
-- ✅ Map display with Leaflet
-- ✅ Real-time location tracking
-- ✅ Park proximity detection
-- ✅ Distance calculation
-- ✅ Mobile-responsive UI
+- ✅ 地理定位 API 整合
+- ✅ Leaflet 地圖顯示
+- ✅ 即時位置追蹤
+- ✅ 公園接近度檢測
+- ✅ 距離計算
+- ✅ 手機響應式 UI
 
-## 🚧 Future Features (Post-MVP)
+## 🚧 未來功能（MVP 後）
 
-- Collection system (check off visited parks)
-- Leaderboards
-- Park info cards (photos, descriptions)
-- Achievement badges
-- Social sharing
-- Offline support
-- Sound effects & animations
+- 集點系統（勾選已訪問的公園）
+- 排行榜
+- 公園資訊卡片（照片、描述）
+- 成就徽章
+- 社交分享
+- 離線支援
+- 音效和動畫
 
-## 📝 Development
+## 📝 開發
 
-### Start dev server
+### 啟動開發伺服器
 ```bash
 npm run dev
 ```
 
-### Run build
+### 執行建置
 ```bash
 npm run build
 ```
 
-### Preview production build
+### 預覽生產版本
 ```bash
 npm run preview
 ```
 
-## 🚀 Deployment
+## 🚀 部署
 
-Deployed on Vercel with automatic CI/CD from GitHub.
+在 Vercel 上部署，具有來自 GitHub 的自動 CI/CD。
 
-To deploy your own fork:
-1. Push to GitHub
-2. Connect repo to Vercel
-3. Deploy automatically
+要部署您自己的分叉：
+1. 推送至 GitHub
+2. 將倉庫連接到 Vercel
+3. 自動部署
 
-## 📄 License
+## 📄 授權
 
 MIT
 
-## 🤝 Contributing
+## 🤝 貢獻
 
-Feedback and suggestions welcome! This is a prototype for testing the core concept.
+歡迎意見回饋和建議！這是用於測試核心概念的原型。
