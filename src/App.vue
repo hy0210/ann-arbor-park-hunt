@@ -171,7 +171,22 @@ export default {
         },
         (error) => {
           console.error('位置獲取失敗:', error);
-          alert('無法獲取位置。請檢查權限設置。');
+          let errorMsg = '無法獲取位置。';
+
+          if (error.code === error.PERMISSION_DENIED) {
+            const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+            if (isIOS) {
+              errorMsg = '位置權限被拒絕。\n\n請在設定中允許此應用程式存取您的位置：\n設定 > 隱私 > 位置服務 > 瀏覽器 > 允許';
+            } else {
+              errorMsg = '位置權限被拒絕。請在瀏覽器設定中允許存取您的位置。';
+            }
+          } else if (error.code === error.POSITION_UNAVAILABLE) {
+            errorMsg = '位置資訊無法使用。請確保 GPS 已啟用。';
+          } else if (error.code === error.TIMEOUT) {
+            errorMsg = '位置請求逾時。請稍後重試。';
+          }
+
+          alert(errorMsg);
         },
         {
           enableHighAccuracy: true,
@@ -213,7 +228,9 @@ export default {
             updateUserMarker(latitude, longitude);
             checkParkProximity(latitude, longitude);
           },
-          null,
+          (error) => {
+            console.error('位置監控失敗:', error);
+          },
           {
             enableHighAccuracy: true,
             timeout: 10000,
